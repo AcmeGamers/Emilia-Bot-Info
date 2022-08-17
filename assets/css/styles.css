@@ -23,6 +23,13 @@ body {
   color: #fff;
 }
 
+/* Built-in Components */
+
+button,
+a {
+  cursor: pointer;
+}
+
 /* Navigation */
 .navigation {
   background: var(--nav-color);
@@ -52,6 +59,9 @@ body {
   background: #707070;
   padding: 15px;
   border-radius: 5px;
+}
+.code span:first-child {
+  margin-bottom: 10px;
 }
 
 video {

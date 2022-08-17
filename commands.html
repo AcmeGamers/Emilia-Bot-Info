@@ -23,71 +23,115 @@
     <!-- Importing Less -->
     <script src="https://cdn.jsdelivr.net/npm/less"></script>
   </head>
-  <body>
-    <main>
-      <!-- Navigation -->
-      <div class="navigation row space-between vr-center">
-        <div class="logo">Emilia Bot</div>
-        <nav>
-          <ul class="nav-items row no-bullets">
-            <li>Home</li>
-            <li>Commands</li>
-            <li>Support</li>
-          </ul>
-        </nav>
-      </div>
-
-      <!-- Content -->
-      <article id="root" class="constraints">
-        <h1 class="primary-color">Commands</h1>
-        <h2>Contents</h2>
-        <ul class="commands-list">
-          <li>
-            <a href="#zalgo">/zalgo</a>
-          </li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-
-        <!-- Content Data -->
-        <div>
-          <h3 id="zalgo">/Zalgo</h3>
-          <span class="code column">
-            <span><strong>Restrictions:</strong> <span>None</span></span>
-            <span>
-              <strong>Ephemeral | Hidden From Chat:</strong>
-              <span>True | Yes</span>
-            </span>
-          </span>
-          <p>
-            <strong>/zalgo</strong> helps users to detect which users have Zalgo
-            Text as their usernames
-          </p>
-          <!-- Mp4 video -->
-          <video
-            class="video"
-            src="assets/videos/1-check-user-with-zalge.mp4"
-            type="video/mp4"
-            controls
-            autoplay
-          ></video>
-        </div>
-      </article>
-    </main>
-
+  <body id="root">
     <!-- Importing Compiler -->
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
     <!-- React -->
     <script type="text/babel">
-      class App extends React.Component {
+      // -------------
+      // @Contents
+      // @Box
+      // @Video
+      // @Compiled Info
+      // @Main Info
+
+      // @Contents
+      class Contents extends React.Component {
         render() {
-          return <div>Hello!</div>;
+          return;
         }
       }
-      // ReactDOM.render(<App />, document.getElementById("root"));
+
+      // @Box
+      class Box extends React.Component {
+        render() {
+          return;
+        }
+      }
+
+      // @Video
+      class Video extends React.Component {
+        render() {
+          return;
+        }
+      }
+
+      // @Compiled Info
+      class CompiledInfo extends React.Component {
+        render() {
+          return;
+        }
+      }
+
+      // @Main App
+      class App extends React.Component {
+        render() {
+          return (
+            <main>
+              {/* Navigation */}
+              <div class="navigation row space-between vr-center">
+                <div class="logo">Emilia Bot</div>
+                <nav>
+                  <ul class="nav-items row no-bullets">
+                    <li>
+                      <a href="/index.html">Home</a>
+                    </li>
+                    <li>
+                      <a href="/index.html">Commands</a>
+                    </li>
+                    <li>
+                      <a href="/index.html">Support</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+
+              {/* Content */}
+              <article id="root" class="constraints">
+                <h1 class="primary-color">Commands</h1>
+                <h2>Contents</h2>
+                <ul class="commands-list">
+                  <li>
+                    <a href="#zalgo">/zalgo</a>
+                  </li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+
+                {/* Content Data */}
+                <div>
+                  <h3 id="zalgo">/Zalgo</h3>
+                  <span class="code column">
+                    <span>
+                      <strong>Restrictions:</strong> <span>None</span>
+                    </span>
+                    <span>
+                      <strong>Ephemeral | Hidden From Chat:</strong>
+                      <span>True | Yes</span>
+                    </span>
+                  </span>
+                  <p>
+                    <strong>/zalgo</strong> helps users to detect which users
+                    have Zalgo Text as their usernames
+                  </p>
+                  {/* Mp4 video */}
+                  <video
+                    class="video"
+                    src="assets/videos/1-check-user-with-zalge.mp4"
+                    type="video/mp4"
+                    controls
+                    autoplay
+                  ></video>
+                </div>
+              </article>
+            </main>
+          );
+        }
+      }
+      ReactDOM.render(<App />, document.getElementById("root"));
     </script>
   </body>
 </html>
