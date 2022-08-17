@@ -45,15 +45,40 @@
 
       // @Box
       class Box extends React.Component {
+        constructor(props) {
+          super(props);
+        }
         render() {
-          return;
+          return (
+            <span class="code column">
+              <span>
+                <strong>Restrictions:</strong>{" "}
+                <span>{this.props.restrictions}</span>
+              </span>
+              <span>
+                <strong>Ephemeral | Hidden From Chat:</strong>{" "}
+                <span>{this.props.hidden ? "True | Yes" : "False | No"}</span>
+              </span>
+            </span>
+          );
         }
       }
 
       // @Video
       class Video extends React.Component {
+        constructor(props) {
+          super(props);
+        }
         render() {
-          return;
+          return (
+            <video
+              class="video"
+              src={"assets/videos/" + this.props.src + ".mp4"}
+              type="video/mp4"
+              controls
+              autoplay
+            ></video>
+          );
         }
       }
 
@@ -87,9 +112,10 @@
                 </nav>
               </div>
 
-              {/* Content */}
               <article id="root" class="constraints">
                 <h1 class="primary-color">Commands</h1>
+
+                {/* Contents */}
                 <h2>Contents</h2>
                 <ul class="commands-list">
                   <li>
@@ -104,27 +130,13 @@
                 {/* Content Data */}
                 <div>
                   <h3 id="zalgo">/Zalgo</h3>
-                  <span class="code column">
-                    <span>
-                      <strong>Restrictions:</strong> <span>None</span>
-                    </span>
-                    <span>
-                      <strong>Ephemeral | Hidden From Chat:</strong>
-                      <span>True | Yes</span>
-                    </span>
-                  </span>
+                  <Box restrictions="None" hidden={true} />
                   <p>
                     <strong>/zalgo</strong> helps users to detect which users
                     have Zalgo Text as their usernames
                   </p>
                   {/* Mp4 video */}
-                  <video
-                    class="video"
-                    src="assets/videos/1-check-user-with-zalge.mp4"
-                    type="video/mp4"
-                    controls
-                    autoplay
-                  ></video>
+                  <Video src="1-check-user-with-zalge" />
                 </div>
               </article>
             </main>
