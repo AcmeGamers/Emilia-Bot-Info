@@ -24,3 +24,7 @@
 .no-bullets {
   list-style: none;
 }
+
+.constraints {
+  padding: 0 50px;
+}
