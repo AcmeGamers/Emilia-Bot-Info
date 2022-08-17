@@ -1,0 +1,29 @@
+/* Media Query Mobile */
+@media only screen and (max-width: 768px) {
+  .constraints {
+    padding: 0 30px;
+  }
+  .compiled-info {
+    line-height: 2;
+  }
+  .compiled-info > div {
+    margin-bottom: 35px;
+  }
+  video {
+    width: -webkit-fill-available;
+  }
+  /* Navigation */
+  .navigation {
+    padding: 20px 30px;
+  }
+  nav > ul {
+    padding: 0;
+  }
+  nav > ul > li:first-child,
+  nav > ul > li:last-child {
+    display: none;
+  }
+  nav > ul > li:nth-child(2) {
+    margin: 0;
+  }
+}
