@@ -37,6 +37,7 @@
       // @Box
       // @Video
       // @Compiled Info
+      // @List
       // @Main Info
       // -----------------
 
@@ -48,28 +49,35 @@
           src: "1-check-user-with-zalge",
           restrictions: false,
           info: "helps users to detect which users have Zalgo Text as their usernames and displays a message about which users have Zalgo names ヾ(•ω•`)o",
-          about: ":D",
+          about: "Check every user with Zalgo Name",
         },
         {
           name: "/change-zalgo-all",
           src: "2-change-zalgo-all",
           restrictions: true,
           info: "helps moderators/admininstrators of the server to change all the Zalgo usernames inside the server and gives them a nickname and a final output of the change (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧",
-          about: ":D",
-        },
-        {
-          name: "/log-channel",
-          src: "3-log-channel",
-          restrictions: true,
-          info: ":D",
-          about: ":D",
+          about: "Change every Zalgo username",
         },
         {
           name: "/nick-type",
           src: "4-nick-type",
           restrictions: true,
-          info: ":D",
-          about: ":D",
+
+          info: "allows moderators/admininstrators to set a specific type of nick name.",
+          moreInfo: "'0' means that user will be given a random name ",
+          moreInfo2:
+            "'1' means that most of the zalgo will be removed from zalgo names (experimental)",
+
+          about: "Setting a type of Zalgo Conversion",
+        },
+        {
+          name: "/log-channel",
+          src: "3-log-channel",
+          restrictions: true,
+          info: "sets a channel where data is logged and displayed in embeds (requires Embed Links permission). There are two cases where it displays logs:",
+          moreInfo: "When users joins with a Zalgo Name",
+          moreInfo2: "When user tries to change the name",
+          about: "Setting Logs",
         },
         {
           name: "/set-role",
@@ -152,6 +160,12 @@
               <p>
                 <strong>{this.props.title.toLowerCase() || ""}</strong>{" "}
                 {this.props.children}
+                {this.props.moreInfo && (
+                  <ul>
+                    <li>{this.props.moreInfo}</li>
+                    <li>{this.props.moreInfo2}</li>
+                  </ul>
+                )}
               </p>
 
               {/* Mp4 video */}
@@ -169,7 +183,7 @@
         render() {
           return (
             <li>
-              <a href={this.props.title.split("/")[1].toLowerCase()}>
+              <a href={"#" + this.props.title.split("/")[1].toLowerCase()}>
                 {this.props.title}
               </a>{" "}
               <span>{this.props.about}</span>
@@ -206,10 +220,9 @@
                 {/* Contents */}
                 <h2>Contents</h2>
                 <ul class="commands-list">
-                  <List title="/D" about="/O" />
-                  {data.map((item, index) => {
-                    <List title={item.name} about={item.about} key={index} />;
-                  })}
+                  {data.map((item, index) => (
+                    <List title={item.name} about={item.about} key={index} />
+                  ))}
                 </ul>
 
                 {/* Content Data */}
@@ -220,6 +233,8 @@
                       src={item.src}
                       restrictions={item.restrictions}
                       key={index}
+                      moreInfo={item.moreInfo || false}
+                      moreInfo2={item.moreInfo2 || false}
                     >
                       {item.info}
                     </CompiledInfo>
