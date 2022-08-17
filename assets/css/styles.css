@@ -33,6 +33,9 @@ a {
 h1 {
   font-size: 36px;
 }
+h3 {
+  color: var(--primary);
+}
 ul {
   margin-bottom: 40px;
 }
@@ -47,8 +50,11 @@ li {
 }
 
 nav a {
-  color: var(--primary);
+  color: #fff;
   font-weight: 600;
+}
+nav a.active {
+  color: var(--primary);
 }
 
 .logo {
