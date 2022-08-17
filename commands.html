@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Commands</title>
+
+    <!-- Importing Style Sheet -->
+    <link rel="stylesheet/less" type="text/css" href="css/styles.less" />
+    <link rel="stylesheet" href="css/predefined.css" />
+
+    <!-- Importing React 18 -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+      crossorigin
+    ></script>
+
+    <!-- Importing Less -->
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
+  </head>
+  <body>
+    <main>
+      <!-- Navigation -->
+      <div>
+        <div class="logo">Emilia Bot</div>
+        <nav></nav>
+      </div>
+
+      <!-- Content -->
+      <article id="root"></article>
+    </main>
+
+    <!-- Importing Compiler -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <!-- React -->
+    <script type="text/babel">
+      class App extends React.Component {
+        render() {
+          return <div>Hello!</div>;
+        }
+      }
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
