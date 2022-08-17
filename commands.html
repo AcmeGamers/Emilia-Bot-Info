@@ -84,8 +84,37 @@
 
       // @Compiled Info
       class CompiledInfo extends React.Component {
+        constructor(props) {
+          super(props);
+        }
         render() {
-          return;
+          return (
+            <div>
+              {/* Header */}
+              <h3 id={this.props.title.split("/")[1].toLowerCase() || ""}>
+                {this.props.title || ""}
+              </h3>
+
+              {/* Restriction Box */}
+              {this.props.restrictions ? (
+                <Box restrictions="None" hidden={true} />
+              ) : (
+                <Box
+                  restrictions="Manage Server Role (Required)"
+                  hidden={false}
+                />
+              )}
+
+              {/* Info */}
+              <p>
+                <strong>{this.props.title.toLowerCase() || ""}</strong> helps
+                users to detect which users have Zalgo Text as their usernames
+              </p>
+
+              {/* Mp4 video */}
+              <Video src={this.props.src} />
+            </div>
+          );
         }
       }
 
@@ -128,16 +157,10 @@
                 </ul>
 
                 {/* Content Data */}
-                <div>
-                  <h3 id="zalgo">/Zalgo</h3>
-                  <Box restrictions="None" hidden={true} />
-                  <p>
-                    <strong>/zalgo</strong> helps users to detect which users
-                    have Zalgo Text as their usernames
-                  </p>
-                  {/* Mp4 video */}
-                  <Video src="1-check-user-with-zalge" />
-                </div>
+                <CompiledInfo
+                  src="1-check-user-with-zalge"
+                  restrictions={false}
+                />
               </article>
             </main>
           );
