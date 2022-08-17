@@ -79,12 +79,34 @@
           moreInfo2: "When user tries to change the name",
           about: "Setting Logs",
         },
+
         {
-          name: "/set-role",
-          src: false,
-          restrictions: true,
-          info: ":D",
-          about: ":D",
+          name: "User Restrictions",
+          src: "user-restrictions",
+          restrictions: "none",
+          info: "are restrictions imposed on the users that a normal user can do, unlike an server manager that can perform every command",
+          about: "",
+        },
+        {
+          name: "Automatic On-Join Conversion",
+          src: "automatic-onjoin-conversion",
+          restrictions: "none",
+          info: "is an automatic utility which checks for each user's name that joins and changes it.",
+          about: "",
+        },
+        {
+          name: "Automatic Change Name Conversion",
+          src: "name-change-conversion",
+          restrictions: "none",
+          info: "is an automatic utility which checks for each user's name that tries to change their name and changes it.",
+          about: "",
+        },
+        {
+          name: "Private Channel",
+          src: "private-channel",
+          restrictions: "none",
+          info: "is something to be careful about, if the bot does not have the permisson to talk in it, it won't owo.",
+          about: "",
         },
       ];
       // @Contents
@@ -142,23 +164,34 @@
           return (
             <div>
               {/* Header */}
-              <h3 id={this.props.title.split("/")[1].toLowerCase() || ""}>
+              <h3
+                id={
+                  this.props.title.includes("/")
+                    ? this.props.title.split("/")[1] || ""
+                    : this.props.title
+                }
+              >
                 {this.props.title || ""}
               </h3>
 
               {/* Restriction Box */}
-              {!this.props.restrictions ? (
-                <Box restrictions="None" hidden={true} />
-              ) : (
-                <Box
-                  restrictions="Manage Server Role (Required)"
-                  hidden={false}
-                />
-              )}
+              {this.props.restrictions != "none" &&
+                (!this.props.restrictions ? (
+                  <Box restrictions="None" hidden={true} />
+                ) : (
+                  <Box
+                    restrictions="Manage Server Role (Required)"
+                    hidden={false}
+                  />
+                ))}
 
               {/* Info */}
               <p>
-                <strong>{this.props.title.toLowerCase() || ""}</strong>{" "}
+                <strong>
+                  {this.props.title.includes("/")
+                    ? this.props.title.split("/")[1] || ""
+                    : this.props.title}
+                </strong>{" "}
                 {this.props.children}
                 {this.props.moreInfo && (
                   <ul>
@@ -183,7 +216,13 @@
         render() {
           return (
             <li>
-              <a href={"#" + this.props.title.split("/")[1].toLowerCase()}>
+              <a
+                href={`#${
+                  this.props.title.includes("/")
+                    ? this.props.title.split("/")[1] || ""
+                    : this.props.title
+                }`}
+              >
                 {this.props.title}
               </a>{" "}
               <span>{this.props.about}</span>
@@ -206,10 +245,10 @@
                       <a href="/index.html">Home</a>
                     </li>
                     <li>
-                      <a href="/index.html">Commands</a>
+                      <a href="/commands.html">Commands</a>
                     </li>
                     <li>
-                      <a href="/index.html">Support</a>
+                      <a href="/support.html">Support</a>
                     </li>
                   </ul>
                 </nav>
@@ -219,6 +258,7 @@
                 <h1 class="primary-color">Commands And Info</h1>
                 {/* Contents */}
                 <h2>Contents</h2>
+
                 <ul class="commands-list">
                   {data.map((item, index) => (
                     <List title={item.name} about={item.about} key={index} />

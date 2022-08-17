@@ -46,6 +46,11 @@ li {
   padding: 20px 100px;
 }
 
+nav a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
 .logo {
   font-size: 20px;
   font-weight: bold;
