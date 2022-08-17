@@ -86,7 +86,7 @@ nav a.active {
 }
 
 video {
-  width: -webkit-fill-available;
+  width: 60vw;
 }
 
 button {
