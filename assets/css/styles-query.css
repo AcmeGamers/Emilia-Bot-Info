@@ -1,5 +1,18 @@
 /* Media Query Mobile */
 @media only screen and (max-width: 768px) {
+  /*  */
+  article#root {
+    flex-direction: column;
+  }
+  .home-section-1 > div > h1 {
+    font-size: 35px;
+  }
+  .home-section-1 > img {
+    width: 85vw;
+    top: 55px;
+  }
+
+  /*  */
   .constraints {
     padding: 0 30px;
   }
@@ -25,5 +38,20 @@
   }
   nav > ul > li:nth-child(2) {
     margin: 0;
+  }
+}
+@media only screen and (min-width: 550px) and (max-width: 768px) {
+  article#root {
+    flex-direction: row;
+  }
+  article#root > div > p {
+    font-size: 13px;
+  }
+  .home-section-1 > img {
+    width: 50vw;
+    top: 0;
+  }
+  .home-section-1 > div > h1 {
+    font-size: 28px;
   }
 }

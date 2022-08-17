@@ -94,8 +94,9 @@ video {
 
 button {
   padding: 10px 30px;
-  border-radius: 5px;
+  border-radius: 3px;
   letter-spacing: 2px;
+  border: none;
 }
 
 /*  */
