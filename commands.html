@@ -55,6 +55,28 @@
           src: "2-change-zalgo-all",
           restrictions: true,
           info: "helps moderators/admininstrators of the server to change all the Zalgo usernames inside the server and gives them a nickname and a final output of the change (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧",
+          about: "",
+        },
+        {
+          name: "/log-channel",
+          src: "3-log-channel",
+          restrictions: true,
+          info: ":D",
+          about: "",
+        },
+        {
+          name: "/nick-type",
+          src: "4-nick-type",
+          restrictions: true,
+          info: ":D",
+          about: "",
+        },
+        {
+          name: "/set-role",
+          src: "5-set-role",
+          restrictions: true,
+          info: ":D",
+          about: "",
         },
       ];
       // @Contents
@@ -187,21 +209,6 @@
                   {data.map((item, index) => {
                     <List title={item.name} about={item.about} key={index} />;
                   })}
-                  <li>
-                    <a href="#zalgo">/zalgo</a>
-                  </li>
-                  <li>
-                    <a href="#change-zalgo-all">/change-zalgo-all</a>
-                  </li>
-                  <li>
-                    <a href="#log-channel">/log-channel</a>
-                  </li>
-                  <li>
-                    <a href="#nick-type">/nick-type</a>
-                  </li>
-                  <li>
-                    <a href="#set-role">/set-role</a>
-                  </li>
                 </ul>
 
                 {/* Content Data */}
