@@ -28,3 +28,7 @@
 .constraints {
   padding: 0 50px;
 }
+
+.screen-width {
+  width: -webkit-fill-available;
+}
