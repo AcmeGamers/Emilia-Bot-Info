@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Commands</title>
+    <title>Home</title>
+
+    <!-- Importing Style Sheet -->
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/predefined.css" />
 
     <!-- Importing React 18 -->
     <script
@@ -15,38 +19,56 @@
       src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
       crossorigin
     ></script>
+
+    <!-- Importing Less -->
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
   </head>
   <body>
     <main>
       <!-- Navigation -->
-      <navigation>
+      <div class="navigation row space-between vr-center">
         <div class="logo">Emilia Bot</div>
-        <nav></nav>
-      </navigation>
+        <nav>
+          <ul class="nav-items row no-bullets">
+            <li>Home</li>
+            <li>Commands</li>
+            <li>Support</li>
+          </ul>
+        </nav>
+      </div>
 
       <!-- Content -->
-      <article id="root"></article>
+      <article
+        id="root"
+        class="constraints row space-between home-section-1 vr-center"
+      >
+        <!-- Info -->
+        <div>
+          <p>An application built</p>
+          <h1>
+            To Detect Zalgo <br />With
+            <span class="primary-color">Automated Controls</span>
+          </h1>
+          <p>Get protection from users with Zalgo Generated Names</p>
+          <button class="primary-background">Invite</button>
+        </div>
+
+        <!-- Image -->
+        <img src="assets/images/robot.svg" alt="SVG of Robot being happy" />
+      </article>
     </main>
 
     <!-- Importing Compiler -->
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
-    <!-- Importing Components -->
-    <script type="text/babel" src="js/components/navigation.js"></script>
-
     <!-- React -->
     <script type="text/babel">
       class App extends React.Component {
         render() {
-          return (
-            <>
-              <Navigation />
-              <h1>Hello!</h1>
-            </>
-          );
+          return <div>Hello!</div>;
         }
       }
-      ReactDOM.render(<App />, document.getElementById("root"));
+      // ReactDOM.render(<App />, document.getElementById("root"));
     </script>
   </body>
 </html>
