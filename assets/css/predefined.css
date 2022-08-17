@@ -1,0 +1,26 @@
+.flex {
+  display: flex;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.hr-center {
+  justify-content: center;
+}
+.vr-center {
+  align-items: center;
+}
+.space-between {
+  justify-content: space-between;
+}
+
+/*  */
+
+.no-bullets {
+  list-style: none;
+}

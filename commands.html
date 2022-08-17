@@ -7,8 +7,8 @@
     <title>Commands</title>
 
     <!-- Importing Style Sheet -->
-    <link rel="stylesheet/less" type="text/css" href="css/styles.less" />
-    <link rel="stylesheet" href="css/predefined.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/predefined.css" />
 
     <!-- Importing React 18 -->
     <script
@@ -26,13 +26,35 @@
   <body>
     <main>
       <!-- Navigation -->
-      <div>
+      <div class="navigation row space-between vr-center">
         <div class="logo">Emilia Bot</div>
-        <nav></nav>
+        <nav>
+          <ul class="nav-items row no-bullets">
+            <li>Home</li>
+            <li>Commands</li>
+            <li>Support</li>
+          </ul>
+        </nav>
       </div>
 
       <!-- Content -->
-      <article id="root"></article>
+      <article id="root">
+        <h1>Commands</h1>
+        <h2>Contents</h2>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        <!-- Content Data -->
+        <div>
+          <h3 id="zalgo">/Zalgo</h3>
+          <code> <strong>Restrictions:</strong> <span>None</span> </code>
+        </div>
+      </article>
     </main>
 
     <!-- Importing Compiler -->
@@ -45,7 +67,7 @@
           return <div>Hello!</div>;
         }
       }
-      ReactDOM.render(<App />, document.getElementById("root"));
+      // ReactDOM.render(<App />, document.getElementById("root"));
     </script>
   </body>
 </html>
