@@ -30,6 +30,16 @@ a {
   cursor: pointer;
 }
 
+h1 {
+  font-size: 36px;
+}
+ul {
+  margin-bottom: 40px;
+}
+li {
+  margin-bottom: 10px;
+}
+
 /* Navigation */
 .navigation {
   background: var(--nav-color);
@@ -86,4 +96,9 @@ button {
   width: 35vw;
   position: relative;
   top: 20px;
+}
+
+/* Compiled Info */
+.compiled-info > div {
+  margin-bottom: 75px;
 }

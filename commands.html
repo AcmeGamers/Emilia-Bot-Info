@@ -29,13 +29,34 @@
 
     <!-- React -->
     <script type="text/babel">
-      // -------------
+      // -----------------
+      // Table Of Contents
+      // -----------------
+      // @Variables
       // @Contents
       // @Box
       // @Video
       // @Compiled Info
       // @Main Info
+      // -----------------
 
+      // @Variables
+
+      let data = [
+        {
+          name: "/zalgo",
+          src: "1-check-user-with-zalge",
+          restrictions: false,
+          info: "helps users to detect which users have Zalgo Text as their usernames and displays a message about which users have Zalgo names ヾ(•ω•`)o",
+          about: "",
+        },
+        {
+          name: "/change-zalgo-all",
+          src: "2-change-zalgo-all",
+          restrictions: true,
+          info: "helps moderators/admininstrators of the server to change all the Zalgo usernames inside the server and gives them a nickname and a final output of the change (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧",
+        },
+      ];
       // @Contents
       class Contents extends React.Component {
         render() {
@@ -96,7 +117,7 @@
               </h3>
 
               {/* Restriction Box */}
-              {this.props.restrictions ? (
+              {!this.props.restrictions ? (
                 <Box restrictions="None" hidden={true} />
               ) : (
                 <Box
@@ -107,13 +128,30 @@
 
               {/* Info */}
               <p>
-                <strong>{this.props.title.toLowerCase() || ""}</strong> helps
-                users to detect which users have Zalgo Text as their usernames
+                <strong>{this.props.title.toLowerCase() || ""}</strong>{" "}
+                {this.props.children}
               </p>
 
               {/* Mp4 video */}
               <Video src={this.props.src} />
             </div>
+          );
+        }
+      }
+
+      // @List
+      class List extends React.Component {
+        constructor(props) {
+          super(props);
+        }
+        render() {
+          return (
+            <li>
+              <a href={this.props.title.split("/")[1].toLowerCase()}>
+                {this.props.title}
+              </a>{" "}
+              <span>{this.props.about}</span>
+            </li>
           );
         }
       }
@@ -142,25 +180,43 @@
               </div>
 
               <article id="root" class="constraints">
-                <h1 class="primary-color">Commands</h1>
-
+                <h1 class="primary-color">Commands And Info</h1>
                 {/* Contents */}
                 <h2>Contents</h2>
                 <ul class="commands-list">
+                  {data.map((item, index) => {
+                    <List title={item.name} about={item.about} key={index} />;
+                  })}
                   <li>
                     <a href="#zalgo">/zalgo</a>
                   </li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
+                  <li>
+                    <a href="#change-zalgo-all">/change-zalgo-all</a>
+                  </li>
+                  <li>
+                    <a href="#log-channel">/log-channel</a>
+                  </li>
+                  <li>
+                    <a href="#nick-type">/nick-type</a>
+                  </li>
+                  <li>
+                    <a href="#set-role">/set-role</a>
+                  </li>
                 </ul>
 
                 {/* Content Data */}
-                <CompiledInfo
-                  src="1-check-user-with-zalge"
-                  restrictions={false}
-                />
+                <div class="compiled-info">
+                  {data.map((item, index) => (
+                    <CompiledInfo
+                      title={item.name}
+                      src={item.src}
+                      restrictions={item.restrictions}
+                      key={index}
+                    >
+                      {item.info}
+                    </CompiledInfo>
+                  ))}
+                </div>
               </article>
             </main>
           );
