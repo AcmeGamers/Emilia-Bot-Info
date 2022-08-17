@@ -48,35 +48,35 @@
           src: "1-check-user-with-zalge",
           restrictions: false,
           info: "helps users to detect which users have Zalgo Text as their usernames and displays a message about which users have Zalgo names ヾ(•ω•`)o",
-          about: "",
+          about: ":D",
         },
         {
           name: "/change-zalgo-all",
           src: "2-change-zalgo-all",
           restrictions: true,
           info: "helps moderators/admininstrators of the server to change all the Zalgo usernames inside the server and gives them a nickname and a final output of the change (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧",
-          about: "",
+          about: ":D",
         },
         {
           name: "/log-channel",
           src: "3-log-channel",
           restrictions: true,
           info: ":D",
-          about: "",
+          about: ":D",
         },
         {
           name: "/nick-type",
           src: "4-nick-type",
           restrictions: true,
           info: ":D",
-          about: "",
+          about: ":D",
         },
         {
           name: "/set-role",
-          src: "5-set-role",
+          src: false,
           restrictions: true,
           info: ":D",
-          about: "",
+          about: ":D",
         },
       ];
       // @Contents
@@ -155,7 +155,7 @@
               </p>
 
               {/* Mp4 video */}
-              <Video src={this.props.src} />
+              {this.props.src && <Video src={this.props.src} />}
             </div>
           );
         }
@@ -206,6 +206,7 @@
                 {/* Contents */}
                 <h2>Contents</h2>
                 <ul class="commands-list">
+                  <List title="/D" about="/O" />
                   {data.map((item, index) => {
                     <List title={item.name} about={item.about} key={index} />;
                   })}
